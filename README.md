@@ -1,6 +1,6 @@
 # DevOpsAssignment
 
-FingerTips -  A central platform for seamless inter organization news sharing
+FingerTips -  A central platform for seamless inter-organization news sharing
 
 Creation of news posts containing titles, details, and descriptions by contributors Contributors can easily craft engaging news posts within the app, including titles, detailed information, and descriptive content, ensuring that every piece of news is well-represented and informative.
 
