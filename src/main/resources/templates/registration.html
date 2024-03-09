@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .navbar-inverse {
+            background-color: #4169E1;
+            border-color: #4169E1;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: #fff; /* Make navbar text white */
+            cursor: pointer;
+        }
+
+        .navbar-inverse .navbar-brand:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+        .navbar-inverse .navbar-text {
+            color: #ffffff;
+        }
+
+        .navbar-text:hover {
+            cursor: pointer;
+        }
+
+
+        .navbar-inverse .navbar-header .navbar-brand {
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px; /* Increased font size */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .navbar-inverse .navbar-header .navbar-brand:hover,
+        .navbar-inverse .navbar-header .navbar-brand:focus {
+            text-decoration: none; /* Remove underline */
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .form-container h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .form-container label {
+            color: #333;
+        }
+
+        /*.form-container input[type="text"]{*/
+        /*    background-color: #f5f5f5;*/
+        /*    border: none;*/
+        /*    border-radius: 5px;*/
+        /*    padding: 10px;*/
+        /*    color: #333;*/
+        /*    margin-bottom: 20px;*/
+        /*    width: 100%; !* Full width *!*/
+        /*}*/
+        /*.form-container input[type="password"] {*/
+        /*    background-color: #f5f5f5;*/
+        /*    border: none;*/
+        /*    border-radius: 5px;*/
+        /*    padding: 10px;*/
+        /*    color: #333;*/
+        /*    margin-bottom: 20px;*/
+        /*    width: 100%; !* Full width *!*/
+        /*}*/
+
+        /*.form-container input[type="text"]:focus{*/
+        /*    background-color: #e0e0e0;*/
+        /*}*/
+        /*.form-container input[type="password"]:focus {*/
+        /*    background-color: #e0e0e0;*/
+        /*}*/
+
+
+        .form-container button[type="submit"] {
+            background-color: #4169E1; /* Blue color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px; /* Adjust font size */
+            font-weight: bold; /* Make font bold */
+            width: auto; /* Adjust width to fit content */
+            display: block;
+            margin: 0 auto; /* Center horizontally */
+        }
+
+        .form-container button[type="submit"]:hover {
+            background-color: #4682B4; /* Darker shade of blue on hover */
+        }
+
+        .form-group.text-center {
+            margin-bottom: 20px; /* Add margin between the button and the text */
+        }
+
+        .form-group.text-center span {
+            display: block;
+            padding-top: 20px; /* Add padding to the top of the text */
+        }
+
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+                Login Module</a> -->
+            <span class="navbar-text" onclick="window.location.href='/';" style="font-size: 20px;">FingerTips</span>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<!-- Create HTML registration form -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 form-container">
+
+            <!-- success message -->
+            <div th:if="${param.success}">
+                <div class="alert alert-info">You've successfully registered to our awesome app!</div>
+            </div>
+
+            <h1>Registration</h1>
+
+            <form th:action="@{/registration}" method="post" th:object="${user}">
+                <div class="form-group">
+                    <label class="control-label" for="firstName"> First Name </label>
+                    <input id="firstName" class="form-control" th:field="*{firstName}"
+                           placeholder="Enter first name" required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="lastName"> Last Name </label> <input
+                        id="lastName" class="form-control" th:field="*{lastName}"
+                        placeholder="Enter Last name" required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="email"> Email </label> <input
+                        id="email" class="form-control" th:field="*{email}" required
+                        placeholder="Enter Email ID"
+                        autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="password"> Password </label> <input
+                        id="password" class="form-control" type="password"
+                        placeholder="Enter Password"
+                        th:field="*{password}" required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-success">Register</button>
+                    <span>Already registered? <a href="/" th:href="@{/login}">Login
+                                here</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

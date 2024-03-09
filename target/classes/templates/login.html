@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration and Login App</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .navbar-inverse {
+            background-color: #4169E1;
+            border-color: #4169E1;
+        }
+        .navbar-inverse .navbar-brand {
+            display: none; /* Hide the navbar-brand */
+        }
+        .navbar-inverse .navbar-text {
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px; /* Increased font size */
+            text-decoration: none; /* Remove underline */
+        }
+        .navbar-inverse .navbar-text:hover,
+        .navbar-inverse .navbar-text:focus {
+            text-decoration: none; /* Remove underline */
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .form-container h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-container label {
+            color: #333;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: #333;
+            margin-bottom: 20px;
+            width: 100%; /* Full width */
+        }
+        .form-container input[type="text"]:focus,
+        .form-container input[type="password"]:focus {
+            background-color: #e0e0e0;
+        }
+        /*.form-container input[type="submit"] {*/
+        /*    background-color: #ff0000; !* Blue color *!*/
+        /*    border: none;*/
+        /*    border-radius: 5px;*/
+        /*    padding: 10px 20px;*/
+        /*    color: #fff;*/
+        /*    cursor: pointer;*/
+        /*    font-size: 16px; !* Adjust font size *!*/
+        /*    font-weight: bold; !* Make font bold *!*/
+        /*    !* width: auto; *! !* Remove this line *!*/
+        /*    display: block;*/
+        /*    margin: 0 auto; !* Center horizontally *!*/
+        /*}*/
+
+        /*.form-container input[type="submit"]:hover {*/
+        /*    background-color: #4682B4; !* Darker shade of blue on hover *!*/
+        /*}*/
+        .login-submit {
+            text-align: center;
+        }
+
+        .login-submit button {
+            font-size: inherit;
+            color: white;
+            background-color: #4169E1; /* Set initial background color */
+            border: none;
+            cursor: pointer;
+            display: inline-block; /* Make button size fit content */
+            padding: 10px 20px; /* Add more padding to all sides */
+            transition: background-color 0.3s; /* Add transition effect for smooth hover */
+            border-radius: 5px; /* Curved edges */
+        }
+
+        .login-submit button:hover {
+            background-color: green; /* Change background color on hover */
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+                Login Module</a> -->
+            <span class="navbar-text" onclick="window.location.href='/';" style="font-size: 20px;">FingerTips</span>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 10%;">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 form-container">
+
+            <h1>User Login Page</h1>
+
+            <form th:action="@{/login}" method="post">
+
+                <!-- error message -->
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">Invalid username or
+                        password.</div>
+                </div>
+
+                <!-- logout message -->
+                <div th:if="${param.logout}">
+                    <div class="alert alert-info">You have been logged out.</div>
+                </div>
+
+                <div th:if="${successMessage}">
+                    <div class="alert alert-info">[[${successMessage}]]</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>:
+                    <input type="text" class="form-control" id="username" name="username"
+                           placeholder="Enter Email ID" autofocus="autofocus">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>:
+                    <input type="password" id="password" name="password" class="form-control"
+                           placeholder="Enter Password" />
+                </div>
+
+                <div class="form-group login-submit">
+                    <button id="login-submit">LOGIN</button>
+                </div>
+            </form>
+            <div class="form-group text-center">
+                <span>New user? <a href="/" th:href="@{/registration}">Register
+                                here</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+net\javaguides\springboot\web\UserRegistrationController.class
+net\javaguides\springboot\service\UserService.class
+net\javaguides\springboot\repository\UserRepository.class
+net\javaguides\springboot\model\Role.class
+net\javaguides\springboot\web\dto\UserRegistrationDto.class
+net\javaguides\springboot\RegistrationLoginSpringBootSecurityThymeleafApplication.class
+net\javaguides\springboot\service\UserServiceImpl.class
+net\javaguides\springboot\web\MainController.class
+net\javaguides\springboot\config\SecurityConfiguration.class
+net\javaguides\springboot\model\User.class
