@@ -10,7 +10,7 @@ FingerTips -  A central platform for seamless inter-organization news sharing
 
 3)Editing and deleting news posts authored by the currently logged-in contributor. Contributors have the autonomy to manage their authored content by editing or removing news posts, maintaining the accuracy and relevance of the platform's news feed while ensuring accountability.
 
-4)Time Filtering allowing relevance of latest news: Users get their news items consumption experience by customizing filters based on time, enabling them to stay informed with the latest updates as news items are sorted chronologically, with the most recent posts displayed prominently.This feature doesn't enable users to search for specific news items. Instead, it allows them to filter based on the time of posting, with the latest news appearing at the top.
+4)Comment feature on the news item helping the contributor improve posts interaction Users can comment on the news items so that the description of the news items can be updated also the news item contributor gets to know about the questions people are having based on the comment.
 
 5)Feedback Functionality of the portal for continuous improvement: Users have the opportunity to provide feedback on their experience with the app, reporting any inconveniences or bugs encountered, facilitating continuous improvement and enhancing user satisfaction through responsive support and troubleshooting.
 
