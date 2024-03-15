@@ -1,0 +1,5 @@
+applications:
+  - name: spring-boot-bootstrap
+    memory: 2G
+    random-route: true
+    path: target/FingerTips-0.0.1-SNAPSHOT.jar
